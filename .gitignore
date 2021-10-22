@@ -1,7 +1,7 @@
 HELP.md
 target/
 bin/
-!.mvn/wrapper/
+.mvn/wrapper/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -10,6 +10,7 @@ bin/
 .apt_generated
 .classpath
 .factorypath
+.project
 .project
 .settings
 .springBeans
