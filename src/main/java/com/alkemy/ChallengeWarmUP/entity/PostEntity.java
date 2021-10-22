@@ -14,8 +14,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 @Entity
 @Table(name = "posts")
+@SQLDelete(sql = "UPDATE posts SET deleted = true WHERE id=?")
+@Where(clause = "deleted=false")
 public class PostEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,6 +46,8 @@ public class PostEntity {
 	private Date fechaCreacion;
 	
 	private Long idUsuario;
+	
+	private boolean deleted = Boolean.FALSE;
 	
 	@PrePersist
 	private void initDate() {

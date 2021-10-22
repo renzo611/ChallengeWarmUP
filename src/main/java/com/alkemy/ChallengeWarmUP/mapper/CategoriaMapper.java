@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.alkemy.ChallengeWarmUP.DTO.CategoriaDto;
+import com.alkemy.ChallengeWarmUP.dto.CategoriaDto;
 import com.alkemy.ChallengeWarmUP.entity.CategoriaEntity;
 
 @Component

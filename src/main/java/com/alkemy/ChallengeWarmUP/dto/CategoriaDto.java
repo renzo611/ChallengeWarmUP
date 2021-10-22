@@ -1,4 +1,4 @@
-package com.alkemy.ChallengeWarmUP.DTO;
+package com.alkemy.ChallengeWarmUP.dto;
 
 public class CategoriaDto {
 	private Long id;

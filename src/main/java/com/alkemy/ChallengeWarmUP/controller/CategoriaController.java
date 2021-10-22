@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alkemy.ChallengeWarmUP.DTO.CategoriaDto;
+import com.alkemy.ChallengeWarmUP.dto.CategoriaDto;
 import com.alkemy.ChallengeWarmUP.entity.CategoriaEntity;
 import com.alkemy.ChallengeWarmUP.serviceImpl.CategoriaServiceImpl;
 

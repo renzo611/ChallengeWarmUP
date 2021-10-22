@@ -1,18 +1,19 @@
 package com.alkemy.ChallengeWarmUP.mapper;
 
 import java.text.DateFormat;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.alkemy.ChallengeWarmUP.DTO.PostBasicDto;
-import com.alkemy.ChallengeWarmUP.DTO.PostDto;
-import com.alkemy.ChallengeWarmUP.auth.service.JwtUtils;
-import com.alkemy.ChallengeWarmUP.auth.service.UserDetailsCustomService;
+import com.alkemy.ChallengeWarmUP.dto.PostBasicDto;
+import com.alkemy.ChallengeWarmUP.dto.PostDto;
 import com.alkemy.ChallengeWarmUP.entity.CategoriaEntity;
 import com.alkemy.ChallengeWarmUP.entity.PostEntity;
 import com.alkemy.ChallengeWarmUP.service.CategoriaService;
@@ -27,6 +28,13 @@ public class PostMapper {
 		for (PostEntity postEntity : posts) {
 			newPosts.add(this.postEnitity2DtoBasic(postEntity));
 		}
+		
+		Collections.sort(newPosts, new Comparator<PostBasicDto>() {
+			@Override
+			public int compare(PostBasicDto p1, PostBasicDto p2) {
+				return p2.getFechaCreacion().compareTo(p1.getFechaCreacion());
+			}
+		});
 		return newPosts;
 	}
 	
